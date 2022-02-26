@@ -1,0 +1,21 @@
+<x3d class="fondo">
+    <Scene>
+    <!-- Tierra -->
+            <Shape>
+                <Appearance>
+                    <imageTexture url="texturas/ctierra.jpg"/>
+                </Appearance>
+                <Sphere/>
+            </Shape>  
+
+    <!-- Luna -->
+        <Transform translation="2 0 0" scale="0.4 0.4 0.4">
+            <Shape>
+                <Appearance>
+                    <imageTexture url="texturas/cluna.jpg"/>
+                </Appearance>
+                <Sphere/>
+            </Shape>  
+        </Transform>
+    </Scene>
+</x3d>

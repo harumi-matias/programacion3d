@@ -24,9 +24,11 @@
     </style>
 </head>
 <body>
-    <h1>Sistema Solar X3D</h1>
+    <h1>Sistema Solar Animado con X3D</h1>
 <x3d class="fondo">
     <Scene>
+        <!-- Transform para agrupar todo el sistema solar para la animacion de rotación -->
+        <transform DEF="SSolar">
             <Shape>
                 <Appearance>
                     <imageTexture url="texturas/csol.jpg"/>
@@ -78,6 +80,19 @@
             <transform translation='0 0 0' scale='0.8 0.8 0.8'>
                 <inline url='luna.x3d'></inline>
             </transform>  
+            <!-- Parámetros de animación: sensor de tiempo y cuál eje se animará -->
+            <timeSensor DEF='timerTL' cycleInterval='30' loop='true'></timeSensor>
+            <orientationInterpolator DEF='rotatorTL' key='0 0.5 1' keyValue='
+            0 1 0 0 
+            0 1 0 3.14 
+            0 1 0 6.28'>
+            </orientationInterpolator>
+            <!-- Cierre del SSolar   -->
+        </transform>    
+        <!-- ROUTE canaliza el sensor de tiempo y la rotación al transform -->
+			<ROUTE fromNode='timerTL' fromField='fraction_changed' toNode='rotatorTL' toField='set_fraction'></ROUTE>
+			<ROUTE fromNode='rotatorTL' fromField='value_changed' toNode='SSolar' toField='set_rotation'>
+            </ROUTE>    
     </Scene>
 </x3d>
 </body>
