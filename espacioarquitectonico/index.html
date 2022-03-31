@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>DEF y USE</title>
+  <script src='https://www.x3dom.org/x3dom/release/x3dom-full.js'></script>
+  <link rel='stylesheet' href='https://www.x3dom.org/x3dom/release/x3dom.css'>
+    <style>
+          body {
+              background-color: white;
+              color: white;
+              font-family: sans-serif;
+              margin: 0;
+          }
+
+          .fondo {
+              width: 100vw;
+              height: 100vh;
+          }
+    </style>
+</head>
+  <body>
+    <X3D class="fondo">
+      <Scene>
+      <!-- Inicio Planta Baja -->
+        <Transform DEF="plantaBaja">
+   <!-- Modelo X3D Original -->
+          <Transform DEF='Fila'>
+          <inline DEF="Arco" url="arco-columna.x3d"></inline>
+            <!-- Copias de las Alas -->
+          <Transform translation="-8 0 0">
+          <Shape USE="Arco" />
+          </Transform>
+          <Transform translation="-16 0 0">
+          <Shape USE="Arco" />
+          </Transform>
+          <Transform translation="-24 0 0">
+          <Shape USE="Arco" />
+          </Transform>
+          <Transform translation="-32 0 0">
+          <Shape USE="Arco" />
+          </Transform>   
+          <Transform translation="-40 0 0">
+          <Shape USE="Arco" />
+          </Transform> 
+          </Transform>  
+
+        <Transform translation="0 0 -40">
+          <Transform USE="Fila"></Transform>
+        </Transform>
+
+        <Transform rotation="0 1 0 -1.57" translation="-3.3 0 3.3">
+          <Transform USE="Fila"></Transform>
+        </Transform>
+
+        <Transform rotation="0 1 0 -1.57" translation="-35 0 3.5">
+          <Transform USE="Fila"></Transform>
+        </Transform>
+      </Transform>
+
+      <!-- Inicio Primer piso -->
+      <Transform translation="0 10 0">
+        <Transform Use="plantaBaja"></Transform>
+      </Transform>
+
+      <!-- Colocar Piso Textura -->
+      <Transform rotation="1 0 0 -1.57" translation="-20 -5 -25">
+        <Shape>
+          <Appearance>
+            <ImageTexture url="img/piso.jpg"></ImageTexture>
+            <TextureTransform scale="10, 10"></TextureTransform>
+          </Appearance>
+          <Box size="70 70 0.5"></Box>
+        </Shape>
+      </Transform>
+
+      <!-- Colocar Paredes Trasera -->
+      <Transform rotation="0 0 1 -1.57" translation="-20 10 -50">
+        <Shape>
+          <Appearance>
+            <ImageTexture url="img/pared.jpg"></ImageTexture>
+            <TextureTransform scale="30, 30"></TextureTransform>
+          </Appearance>
+          <Box size="30 50 0.5"></Box>
+        </Shape>
+      </Transform>
+      <!-- Colocar Paredes Izquierda -->
+      <Transform rotation="0 1 0 -1.57" translation="4 10 -20">
+        <Shape>
+          <Appearance>
+            <ImageTexture url="img/pared.jpg"></ImageTexture>
+            <TextureTransform scale="30, 30"></TextureTransform>
+          </Appearance>
+          <Box size="60 30 0.5"></Box>
+        </Shape>
+      </Transform>
+
+      <!-- Colocar Paredes Derecha -->
+         <Transform rotation="0 1 0 -1.57" translation="-44 10 -20">
+            <Shape>
+              <Appearance>
+                <ImageTexture url="img/pared.jpg"></ImageTexture>
+                <TextureTransform scale="30, 30"></TextureTransform>
+              </Appearance>
+              <Box size="60 30 0.5"></Box>
+            </Shape>
+          </Transform>
+
+      <!-- Colocar Paredes Delantera -->
+      <Transform rotation="0 0 1 -1.57" translation="-20 10 10">
+        <Shape>
+          <Appearance>
+            <ImageTexture url="img/pared.jpg"></ImageTexture>
+            <TextureTransform scale="30, 30"></TextureTransform>
+          </Appearance>
+          <Box size="30 50 0.5"></Box>
+        </Shape>
+      </Transform>
+
+      <!-- Fondo con colores para cielo y tierra -->
+
+      <Background 
+      skyColor="0.21 0.18 0.66,
+                0.2 0.44 0.85,
+                0.51 0.81 0.95,
+                0.77 0.80 0.82"
+      skyAngle="0.5 1.5 1.57"
+      
+      groundColor="0.6 0.7 0.1,
+                   0.4 0.7 0.2,
+                   0.1 0.6 0.1,
+                   0 0.3 0.1"
+      groundAngle="0.9 1.5 1.57">
+      </Background>
+
+      </Scene>
+    </X3D>  
+  </body>
+</html>
