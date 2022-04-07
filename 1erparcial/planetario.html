@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Planetario Galileo Galilei</title>
+  <script src='https://www.x3dom.org/x3dom/release/x3dom-full.js'></script>
+  <link rel='stylesheet' href='https://www.x3dom.org/x3dom/release/x3dom.css'>
+    <style>
+          body {
+              background-color: black;
+              color: white;
+              font-family: sans-serif;
+              margin: 0;
+          }
+
+          .fondo {
+              width: 100vw;
+              height: 100vh;
+          }
+
+    </style>
+</head>
+  <body>
+    <X3D class="fondo">
+    <Scene>
+          <Transform translation="-18 8 -30" scale='0.3 0.3 0.3'>
+            <inline DEF="planetario" url="planetario.x3d"></inline>
+            </Transform>
+
+      <!-- Colocar Piso Textura -->
+      <Transform rotation="1 0 0 -1.57" translation="-20 -5 -25">
+        <Shape>
+          <Appearance>
+            <ImageTexture url="img/grass.jpeg"></ImageTexture>
+            <TextureTransform scale="10, 10"></TextureTransform>
+          </Appearance>
+          <Box size="60 60 .5"></Box>
+        </Shape>
+      </Transform>
+      <!-- Colocar Reja Delantera -->
+      <Transform rotation="0 0 0 0" translation="-18 -3 -18" scale='3 3 3'>
+        <Shape>
+          <Appearance>
+            <ImageTexture url="img/fence2.png"></ImageTexture>
+            <TextureTransform scale="1 1"></TextureTransform>
+          </Appearance>
+          <Box size="15 1 0"></Box>
+        </Shape>
+      </Transform>
+            <!-- Colocar Reja Trasera-->
+            <Transform rotation="0 0 0 0" translation="-18 -3 -45.5" scale='3 3 3'>
+              <Shape>
+                <Appearance>
+                  <ImageTexture url="img/fence2.png"></ImageTexture>
+                  <TextureTransform scale="1 1"></TextureTransform>
+                </Appearance>
+                <Box size="15 1 0"></Box>
+              </Shape>
+            </Transform>
+    <!-- Colocar Piso2 Textura -->
+    <Transform rotation="1 0 0 -1.57" translation="-20 -5.5 -25">
+      <Shape>
+        <Appearance>
+          <ImageTexture url="img/tierra.jpg"></ImageTexture>
+          <TextureTransform scale="10, 10"></TextureTransform>
+        </Appearance>
+        <Box size="80 80 .8"></Box>
+      </Shape>
+    </Transform>      
+    
+<!-- Persona -->    
+    <Transform translation="3 -4.8 -2" scale='3 3 3' rotation="0 1 0 .872">
+      <inline DEF="dennis-posed-004" url="dennis-posed-004.x3d"></inline>
+      </Transform>
+
+<!-- Árbol -->    
+<Transform DEF="tree" translation="15 -4.8 -50" scale='0.3 0.3 0.3' rotation="0 1 0 .872">
+  <inline url="tree-05.x3d"></inline>
+  </Transform>  
+  
+<!--Copia de árbol-->
+<Transform translation="-70 -1 0">
+  <Shape USE="tree" />
+  </Transform>  
+
+<!-- Bandera -->    
+<Transform translation="-50 -4.8 -2" scale='80 80 80' rotation="0 1 0 3.14">
+  <inline DEF="flag" url="nykz-flag.x3d"></inline>
+  </Transform>  
+            
+<!-- FONDO -->
+
+        <Background 
+      skyColor="0.21 0.18 0.66,
+                0.2 0.44 0.85,
+                0.51 0.81 0.95,
+                0.77 0.80 0.82"
+      skyAngle="0.5 1.5 1.57"
+      
+>
+      </Background>
+      </Scene>
+    </X3D>  
+  </body>
+</html>

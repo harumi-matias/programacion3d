@@ -1,0 +1,71 @@
+
+html {
+    font-size: 62.5%; 
+    /* Normalizar para REMS */
+}
+
+body {
+font-family: Aclonica;
+font-size: 1.6rem;
+background-color: aliceblue;
+}
+
+
+
+canvas {
+  margin: auto;
+}
+
+/* Principales */
+
+h1{
+    font-size: 2.3rem;
+    font-family: Aclonica;
+    font-weight: bold;
+    margin: 2rem;
+}
+
+h2{
+  font-size: 3rem;
+  font-family: aclonica;
+  font-weight: bold;
+  margin: 2rem;
+}
+
+p{
+  font-size: 1.3rem;
+}
+
+#menu  
+{
+  font-size: 3rem;
+  font-family: Rubik Moonrocks,
+}
+
+
+
+  /*-----------------------------
+  5. ESTILOS MENÚ NAVEGACIÓN
+  -------------------------------*/
+  .navbar-nav {
+      background-color: rgb(135, 81, 206);
+      height: 80px;
+  }
+
+  .navbar-nav li a {
+    font-size: 2.3rem;
+    color: white;
+    padding-right: 3rem;
+    opacity: 1;
+    margin-left: 2rem;
+    margin-right: 2rem;
+    margin-top: 2rem;
+  }
+  
+  .navbar-nav li a:hover {
+    opacity: 1;
+    color: rgb(38, 6, 75);
+  }
+  
+
+
