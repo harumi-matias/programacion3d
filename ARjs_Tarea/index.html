@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pokemon</title>
+    <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
+  <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
+</head>
+<body>
+    <a-scene embedded arjs>
+        <a-assets>
+            <img id="back" src="texturas/back.jpeg">
+          </a-assets>
+          <a-sky src="#back"></a-sky>
+        <a-marker preset="hiro">
+            <!-- Primitivas que podemos utilizar: box, circle, cone, cylinder, dodecahedron, octahedron, plane, ring, sphere (radius), tetrahedron, torus, torusKnot (radius, radius-tubular)y triangle -->
+            <a-entity geometry="primitive: sphere; radius: 1" material="src: url(texturas/pokeball_red.jpg)" rotation="0 270 30" position="0 0 0" ></a-entity>
+            <a-entity geometry="primitive: sphere; radius: 1" material="src: url(texturas/ultraball.jpg)" rotation="0 270 30" position="3 0 1.2"></a-entity>
+            <a-entity geometry="primitive: sphere; radius: 1" material="src: url(texturas/white.jpg)" rotation="0 270 30" position="6 0 0"></a-entity>
+        </a-marker>
+        <a-entity camera></a-entity>
+    </a-scene>
+</body>  
+</html>
