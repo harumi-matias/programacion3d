@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Marcador Kanji</title>
+    <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
+  <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
+  <style>
+
+</style>
+</head>
+<body>
+    <a-scene embedded arjs>
+        <a-marker preset="kanji">
+            <!-- Objeto central servira como objeto nulo-->
+            <a-entity geometry="primitive: torusKnot; radius: 3.5; radius-tubular: 0.5" material="src: url(texturas/piel.jpg)" positio="0 1 0">   
+            </a-entity>
+            <!-- Segundo objeto llevará la animación que estaran dentro del segundo a-entity-->
+            <a-entity rotation="0 0 0" animation="property: rotation; to: 0 360 0; loop: true; dur: 5000; easing: linear">
+                <a-entity geometry="primitive: sphere; radius: 0.5;" position="1 0 -1.3" material="src: url(texturas/animal.jpg)"></a-entity>
+            </a-entity>
+        </a-marker>
+        <a-entity camera></a-entity>
+    </a-scene>
+</body>  
+</html>
