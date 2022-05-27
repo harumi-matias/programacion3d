@@ -27,6 +27,10 @@
                 id="personaje-animado2"
                 src="modelos3d/zombie3.glb"
             ></a-asset-item>
+            <a-asset-item
+                id="personaje-animado3"
+                src="modelos3d/zombie1.glb"
+            ></a-asset-item>
             </a-assets>
 
             <a-marker
@@ -42,7 +46,7 @@
                 <a-entity
                     id="modelo-3D"
                     scale="0.5 0.5 0.5"
-                    position="0 0 0"
+                    position="0 0 -4"
                     animation-mixer="loop: repeat"
                     gltf-model="#personaje-animado"
                     class="clickable"
@@ -52,7 +56,7 @@
                 <a-entity
                 id="modelo-3D"
                 scale="0.5 0.5 0.5"
-                position="-3 0 1"
+                position="-3 0 -3"
                 rotation="0 90 0"
                 animation-mixer="loop: repeat"
                 gltf-model="#personaje-animado2"
@@ -60,6 +64,16 @@
                 gesture-handler
             ></a-entity>
 
+            <a-entity
+            id="modelo-3D"
+            scale="0.5 0.5 0.5"
+            position="3 0 -2"
+            rotation="0 -90 0"
+            animation-mixer="loop: repeat"
+            gltf-model="#personaje-animado3"
+            class="clickable"
+            gesture-handler
+        ></a-entity>
             <a-entity
             geometry="primitive: plane; height: 15; width: 15" material="src: url(texture/grass.png); side: double" position="0 0 0" rotation="90 0 0"
         ></a-entity>
