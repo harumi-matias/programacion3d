@@ -1,0 +1,193 @@
+<!doctype html>
+<html>
+    <head>
+        <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
+        <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
+        <script src="https://raw.githack.com/donmccurdy/aframe-extras/master/dist/aframe-extras.loaders.min.js"></script>
+        <script src="https://raw.githack.com/AR-js-org/studio-backend/master/src/modules/marker/tools/gesture-detector.js"></script>
+        <script src="https://raw.githack.com/AR-js-org/studio-backend/master/src/modules/marker/tools/gesture-handler.js"></script>
+    </head>
+
+    <body style='margin : 0px; overflow: hidden; font-family: Monospace;'>
+        <a-scene 
+        embedded arjs='sourceType: webcam; 
+        detectionMode: mono_and_matrix; matrixCodeType: 3x3;' renderer='precision: medium;'
+        embedded 
+        gesture-detector>
+<!-- Marcador personalizado God_kong -->
+            <a-assets>
+                <a-asset-item
+                    id="personaje-kong"
+                    src="modelos3d/kong.glb"
+                ></a-asset-item>
+                <a-asset-item
+                id="personaje-godzilla"
+                src="modelos3d/godzilla.glb"
+            ></a-asset-item>
+            <a-asset-item
+                id="personaje-city"
+                src="modelos3d/city2.glb"
+            ></a-asset-item>
+            </a-assets>
+            
+            <a-marker
+                id="marcador"
+                type="pattern"
+                preset="custom"
+                url="modelos3d/godz_kong.patt"
+                raycaster="objects: .clickable"
+                emitevents="true"
+                cursor="fuse: false; rayOrigin: mouse;"
+                id="markerA"
+            >
+                <a-entity
+                    id="modelo-3D"
+                    scale="0.1 0.1 0.1"
+                    position="0 0 0"
+                    rotation="0 90 0"
+                    animation-mixer="loop: repeat"
+                    gltf-model="#personaje-kong"
+                    animation="loop"
+                    class="clickable"
+                    gesture-handler
+                ></a-entity>
+                <a-entity
+                id="modelo-3D"
+                scale="0.5 0.5 0.5"
+                position="5 0 0"
+                rotation="0 -90 0"
+                animation-mixer="loop: repeat"
+                gltf-model="#personaje-godzilla"
+                class="clickable"
+                gesture-handler
+            ></a-entity>
+
+            <a-entity 
+            id="modelo-3D"
+            scale="0.5 0.5 0.5"
+            position="3 0 -2"
+            rotation="0 -45 0"
+            animation-mixer="loop: repeat"
+            gltf-model="#personaje-city"
+            class="clickable"
+            gesture-handler
+        ></a-entity>
+            </a-marker>
+            <a-entity light="type: ambient; color: white; intensity: 1.6;"></a-entity>
+
+        <!-- hiro -->
+		<a-marker preset='hiro'>
+			<a-entity
+            position="0 1 0"
+            scale="0.3 0.3 0.3"
+            animation-mixer="loop: repeat"
+            gltf-model="modelos3d/zombie-crawl.glb"
+            ></a-entity>
+		</a-marker>
+
+<!-- Personalizado zombie -->
+		<a-assets>
+            <a-asset-item
+                id="personaje-animado"
+                src="modelos3d/zombie_bite.glb"
+            ></a-asset-item>
+            <a-asset-item
+            id="personaje-animado2"
+            src="modelos3d/zombie-walk.glb"
+        ></a-asset-item>
+        <a-asset-item
+            id="personaje-animado3"
+            src="modelos3d/zombie-crawl.glb"
+        ></a-asset-item>
+        </a-assets>
+
+        <a-marker
+            id="marcador"
+            type="pattern"
+            preset="custom"
+            url="modelos3d/zombie_marcador.patt"
+            raycaster="objects: .clickable"
+            emitevents="true"
+            cursor="fuse: false; rayOrigin: mouse;"
+            id="markerA"
+        >
+            <a-entity
+                id="modelo-3D"
+                scale="0.5 0.5 0.5"
+                position="0 0 -4"
+                animation-mixer="loop: repeat"
+                gltf-model="#personaje-animado"
+                class="clickable"
+                gesture-handler
+            ></a-entity>
+
+            <a-entity
+            id="modelo-3D"
+            scale="0.5 0.5 0.5"
+            position="-3 0 -3"
+            rotation="0 90 0"
+            animation-mixer="loop: repeat"
+            gltf-model="#personaje-animado2"
+            class="clickable"
+            gesture-handler
+        ></a-entity>
+
+        <a-entity 
+        id="modelo-3D"
+        scale="0.5 0.5 0.5"
+        position="3 0 -2"
+        rotation="0 -90 0"
+        animation-mixer="loop: repeat"
+        gltf-model="#personaje-animado3"
+        class="clickable"
+        gesture-handler
+    ></a-entity>
+
+        <a-entity
+        geometry="primitive: plane; height: 15; width: 15" material="src: url(texture/grass.png); side: double" position="0 0 0" rotation="90 0 0"
+    ></a-entity>
+</a-marker>
+
+<!-- matrix: barcode 32 -->
+		<a-marker type='barcode' value='32'>
+			<a-entity
+            position="0 0 0"
+			rotation="-90 0 0" 
+            scale="0.3 0.3 0.3"
+			animation-mixer="loop: repeat"
+            gltf-model="modelos3d/t_rex.glb"
+            ></a-entity>
+		</a-marker>
+<!-- Personalizado T_rex      -->
+        <a-assets>
+            <a-asset-item
+                id="trex"
+                src="modelos3d/t_rex.glb"
+            ></a-asset-item>
+        </a-assets>
+
+        <a-marker
+            id="marcador"
+            type="pattern"
+            preset="custom"
+            url="modelos3d/t_rex.patt"
+            raycaster="objects: .clickable"
+            emitevents="true"
+            cursor="fuse: false; rayOrigin: mouse;"
+            id="markerA"
+        >
+            <a-entity
+                id="modelo-3D"
+                scale="0.5 0.5 0.5"
+                position="0 0 -4"
+                animation-mixer="loop: repeat"
+                gltf-model="#trex"
+                class="clickable"
+                gesture-handler
+            ></a-entity>
+</a-marker>
+
+		<a-entity camera></a-entity>
+	</a-scene>
+    </body>
+</html>
