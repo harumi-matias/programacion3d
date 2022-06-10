@@ -45,7 +45,7 @@
                     scale="0.1 0.1 0.1"
                     position="0 0 0"
                     rotation="0 90 0"
-                    animation-mixer="loop: repeat"
+                    animation-mixer="loop:pingpong"
                     gltf-model="#personaje-kong"
                     animation="loop"
                     class="clickable"
@@ -121,7 +121,7 @@
             <a-entity
                 id="modelo-3D"
                 scale="0.5 0.5 0.5"
-                position="0 0 -4"
+                position="0 0 -2"
                 animation-mixer="loop: pingpong"
                 gltf-model="#personaje-animado"
                 class="clickable"
@@ -131,7 +131,18 @@
             <a-entity
             id="modelo-3D"
             scale="0.5 0.5 0.5"
-            position="-3 0 -3"
+            position="0 0 2"
+            rotation="0 90 0"
+            animation-mixer="loop: pingpong"
+            gltf-model="#personaje-animado"
+            class="clickable"
+            gesture-handler
+        ></a-entity>
+
+            <a-entity
+            id="modelo-3D"
+            scale="0.5 0.5 0.5"
+            position="-2 0 1"
             rotation="0 90 0"
             animation-mixer="loop: repeat"
             gltf-model="#personaje-animado2"
@@ -142,8 +153,8 @@
         <a-entity 
         id="modelo-3D"
         scale="0.5 0.5 0.5"
-        position="3 0 -2"
-        rotation="0 -90 0"
+        position="3 0 1"
+        rotation="0 -95 0"
         animation-mixer="loop: repeat "
         gltf-model="#personaje-animado3"
         class="clickable"
@@ -151,7 +162,7 @@
     ></a-entity>
 
         <a-entity
-        geometry="primitive: plane; height: 10; width: 10" material="src: url(texture/grass.png); side: double" position="0 0 0" rotation="90 0 0"
+        geometry="primitive: plane; height: 6; width: 6" material="src: url(texture/grass.png); side: double" position="0 0 0" rotation="90 0 0"
     ></a-entity>
 </a-marker>
 
@@ -195,7 +206,7 @@
                 class="clickable"
                 gesture-handler
             ></a-entity>
-            <a-entity light="type: ambient; color: white; intensity: 2;"></a-entity>
+            <a-entity light="type: ambient; color: white; intensity: 1;"></a-entity>
 </a-marker>
 
 		<a-entity camera></a-entity>
